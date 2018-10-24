@@ -13,6 +13,10 @@
 		DC638D762180FD22003F7385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC638D752180FD22003F7385 /* Assets.xcassets */; };
 		DC638D792180FD22003F7385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC638D772180FD22003F7385 /* LaunchScreen.storyboard */; };
 		DC638D842180FD22003F7385 /* MistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D832180FD22003F7385 /* MistTests.swift */; };
+		DC638D902180FE58003F7385 /* IssPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D8F2180FE58003F7385 /* IssPosition.swift */; };
+		DC638D922180FE61003F7385 /* IssCrew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D912180FE61003F7385 /* IssCrew.swift */; };
+		DC638D942180FF77003F7385 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D932180FF77003F7385 /* Coordinate.swift */; };
+		DC638D962181004F003F7385 /* CrewMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D952181004F003F7385 /* CrewMember.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		DC638D7F2180FD22003F7385 /* MistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC638D832180FD22003F7385 /* MistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MistTests.swift; sourceTree = "<group>"; };
 		DC638D852180FD22003F7385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC638D8F2180FE58003F7385 /* IssPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssPosition.swift; sourceTree = "<group>"; };
+		DC638D912180FE61003F7385 /* IssCrew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssCrew.swift; sourceTree = "<group>"; };
+		DC638D932180FF77003F7385 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		DC638D952181004F003F7385 /* CrewMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMember.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 		DC638D6D2180FD1F003F7385 /* Mist */ = {
 			isa = PBXGroup;
 			children = (
+				DC638D8E2180FE29003F7385 /* Model */,
 				DC638D6E2180FD1F003F7385 /* AppDelegate.swift */,
 				DC638D702180FD1F003F7385 /* ViewController.swift */,
 				DC638D722180FD1F003F7385 /* Main.storyboard */,
@@ -94,6 +103,17 @@
 				DC638D852180FD22003F7385 /* Info.plist */,
 			);
 			path = MistTests;
+			sourceTree = "<group>";
+		};
+		DC638D8E2180FE29003F7385 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC638D8F2180FE58003F7385 /* IssPosition.swift */,
+				DC638D912180FE61003F7385 /* IssCrew.swift */,
+				DC638D932180FF77003F7385 /* Coordinate.swift */,
+				DC638D952181004F003F7385 /* CrewMember.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC638D922180FE61003F7385 /* IssCrew.swift in Sources */,
 				DC638D712180FD1F003F7385 /* ViewController.swift in Sources */,
 				DC638D6F2180FD1F003F7385 /* AppDelegate.swift in Sources */,
+				DC638D902180FE58003F7385 /* IssPosition.swift in Sources */,
+				DC638D962181004F003F7385 /* CrewMember.swift in Sources */,
+				DC638D942180FF77003F7385 /* Coordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
