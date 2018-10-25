@@ -19,6 +19,13 @@
 		DC638D962181004F003F7385 /* CrewMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D952181004F003F7385 /* CrewMember.swift */; };
 		DC638D9F21810534003F7385 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D9A2181037E003F7385 /* RxSwift.framework */; };
 		DC638DA02181053D003F7385 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D982181037E003F7385 /* RxCocoa.framework */; };
+		DC638DA5218108C9003F7385 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638DA4218108C9003F7385 /* ApiClient.swift */; };
+		DC638DA921811070003F7385 /* IssLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638DA821811070003F7385 /* IssLocator.swift */; };
+		DC638DAB2181ECAE003F7385 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638DAA2181ECAE003F7385 /* DataStore.swift */; };
+		DC638DAE2181F204003F7385 /* IssLocatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638DAD2181F204003F7385 /* IssLocatorTests.swift */; };
+		DC638DAF2181F2FA003F7385 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638DA1218106AE003F7385 /* RxTest.framework */; };
+		DC638DB02181F2FA003F7385 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D9A2181037E003F7385 /* RxSwift.framework */; };
+		DC638DB12181F2FA003F7385 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D982181037E003F7385 /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +57,10 @@
 		DC638D992181037E003F7385 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		DC638D9A2181037E003F7385 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		DC638DA1218106AE003F7385 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		DC638DA4218108C9003F7385 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		DC638DA821811070003F7385 /* IssLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssLocator.swift; sourceTree = "<group>"; };
+		DC638DAA2181ECAE003F7385 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		DC638DAD2181F204003F7385 /* IssLocatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssLocatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC638DAF2181F2FA003F7385 /* RxTest.framework in Frameworks */,
+				DC638DB02181F2FA003F7385 /* RxSwift.framework in Frameworks */,
+				DC638DB12181F2FA003F7385 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +123,7 @@
 		DC638D822180FD22003F7385 /* MistTests */ = {
 			isa = PBXGroup;
 			children = (
+				DC638DAC2181F1F0003F7385 /* Services */,
 				DC638D832180FD22003F7385 /* MistTests.swift */,
 				DC638D852180FD22003F7385 /* Info.plist */,
 			);
@@ -140,6 +155,17 @@
 		DC638DA3218107F7003F7385 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DC638DA4218108C9003F7385 /* ApiClient.swift */,
+				DC638DA821811070003F7385 /* IssLocator.swift */,
+				DC638DAA2181ECAE003F7385 /* DataStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DC638DAC2181F1F0003F7385 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DC638DAD2181F204003F7385 /* IssLocatorTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -268,11 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC638DA5218108C9003F7385 /* ApiClient.swift in Sources */,
 				DC638D922180FE61003F7385 /* IssCrew.swift in Sources */,
 				DC638D712180FD1F003F7385 /* ViewController.swift in Sources */,
 				DC638D6F2180FD1F003F7385 /* AppDelegate.swift in Sources */,
 				DC638D902180FE58003F7385 /* IssPosition.swift in Sources */,
+				DC638DA921811070003F7385 /* IssLocator.swift in Sources */,
 				DC638D962181004F003F7385 /* CrewMember.swift in Sources */,
+				DC638DAB2181ECAE003F7385 /* DataStore.swift in Sources */,
 				DC638D942180FF77003F7385 /* Coordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC638DAE2181F204003F7385 /* IssLocatorTests.swift in Sources */,
 				DC638D842180FD22003F7385 /* MistTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +512,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TB9UH899T9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MistTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,6 +537,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TB9UH899T9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MistTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
