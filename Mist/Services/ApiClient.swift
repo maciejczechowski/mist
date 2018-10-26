@@ -13,7 +13,7 @@ protocol ApiClientProtocol {
     func getAndParseResponse<T: Codable>(t: T.Type, for path: String) -> Observable<T>
 }
 
-class ApiClient {
+class ApiClient : ApiClientProtocol {
     let baseUrl: URL
 
     init(with baseUrl: URL) {

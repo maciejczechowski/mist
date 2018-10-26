@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "mapViewController") as! MapViewController
+        
+        MapViewControllerCoordinator().configureMapViewController(controller: viewController)
+        self.window = UIWindow()
+        self.window?.rootViewController = viewController
+        self.window?.makeKeyAndVisible()
+       
+        
         return true
     }
 

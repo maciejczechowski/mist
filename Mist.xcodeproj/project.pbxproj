@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DC638D6F2180FD1F003F7385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D6E2180FD1F003F7385 /* AppDelegate.swift */; };
-		DC638D712180FD1F003F7385 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D702180FD1F003F7385 /* ViewController.swift */; };
+		DC638D712180FD1F003F7385 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D702180FD1F003F7385 /* MapViewController.swift */; };
 		DC638D742180FD1F003F7385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC638D722180FD1F003F7385 /* Main.storyboard */; };
 		DC638D762180FD22003F7385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC638D752180FD22003F7385 /* Assets.xcassets */; };
 		DC638D792180FD22003F7385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC638D772180FD22003F7385 /* LaunchScreen.storyboard */; };
@@ -26,6 +26,7 @@
 		DC638DAF2181F2FA003F7385 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638DA1218106AE003F7385 /* RxTest.framework */; };
 		DC638DB02181F2FA003F7385 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D9A2181037E003F7385 /* RxSwift.framework */; };
 		DC638DB12181F2FA003F7385 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D982181037E003F7385 /* RxCocoa.framework */; };
+		DC638DB421835A0F003F7385 /* MapViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638DB321835A0F003F7385 /* MapViewControllerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,7 @@
 /* Begin PBXFileReference section */
 		DC638D6B2180FD1F003F7385 /* Mist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC638D6E2180FD1F003F7385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC638D702180FD1F003F7385 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC638D702180FD1F003F7385 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DC638D732180FD1F003F7385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC638D752180FD22003F7385 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC638D782180FD22003F7385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		DC638DA821811070003F7385 /* IssLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssLocator.swift; sourceTree = "<group>"; };
 		DC638DAA2181ECAE003F7385 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		DC638DAD2181F204003F7385 /* IssLocatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssLocatorTests.swift; sourceTree = "<group>"; };
+		DC638DB321835A0F003F7385 /* MapViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +110,10 @@
 		DC638D6D2180FD1F003F7385 /* Mist */ = {
 			isa = PBXGroup;
 			children = (
+				DC638DB2218359F7003F7385 /* ViewControllers */,
 				DC638DA3218107F7003F7385 /* Services */,
 				DC638D8E2180FE29003F7385 /* Model */,
 				DC638D6E2180FD1F003F7385 /* AppDelegate.swift */,
-				DC638D702180FD1F003F7385 /* ViewController.swift */,
 				DC638D722180FD1F003F7385 /* Main.storyboard */,
 				DC638D752180FD22003F7385 /* Assets.xcassets */,
 				DC638D772180FD22003F7385 /* LaunchScreen.storyboard */,
@@ -168,6 +170,15 @@
 				DC638DAD2181F204003F7385 /* IssLocatorTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		DC638DB2218359F7003F7385 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC638D702180FD1F003F7385 /* MapViewController.swift */,
+				DC638DB321835A0F003F7385 /* MapViewControllerCoordinator.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,10 +307,11 @@
 			files = (
 				DC638DA5218108C9003F7385 /* ApiClient.swift in Sources */,
 				DC638D922180FE61003F7385 /* IssCrew.swift in Sources */,
-				DC638D712180FD1F003F7385 /* ViewController.swift in Sources */,
+				DC638D712180FD1F003F7385 /* MapViewController.swift in Sources */,
 				DC638D6F2180FD1F003F7385 /* AppDelegate.swift in Sources */,
 				DC638D902180FE58003F7385 /* IssPosition.swift in Sources */,
 				DC638DA921811070003F7385 /* IssLocator.swift in Sources */,
+				DC638DB421835A0F003F7385 /* MapViewControllerCoordinator.swift in Sources */,
 				DC638D962181004F003F7385 /* CrewMember.swift in Sources */,
 				DC638DAB2181ECAE003F7385 /* DataStore.swift in Sources */,
 				DC638D942180FF77003F7385 /* Coordinate.swift in Sources */,

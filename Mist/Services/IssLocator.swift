@@ -25,7 +25,10 @@ struct IssLocationData {
     let Timestamp: Date?
 }
 
-public class IssLocator {
+protocol IssLocatorProtocol {
+     func getIssPositions(withInterval seconds: Int) -> Observable<IssLocationData>
+}
+public class IssLocator : IssLocatorProtocol {
 
     private let scheduler: SchedulerType;
     private let issApiClient: ApiClientProtocol
