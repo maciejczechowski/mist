@@ -16,23 +16,27 @@ class MapViewController: UIViewController, MGLMapViewDelegate{
     
     var disposeBag: DisposeBag!
     var issLocator: IssLocatorProtocol!
-    var annotation: MGLPointAnnotation?
+    var annotation: MGLPointAnnotation!
     
     @IBOutlet weak var statusLabel: UILabel!
   
     @IBOutlet weak var mapView: MGLMapView!
     
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
          mapView.styleURL = MGLStyle.satelliteStreetsStyleURL
+         annotation = MGLPointAnnotation()
+
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.disposeBag = DisposeBag()
+        mapView.delegate = self
         
         let issResuls = issLocator
             .getIssPositions(with: RefreshInterval)
@@ -50,23 +54,29 @@ class MapViewController: UIViewController, MGLMapViewDelegate{
             .filter{ $0.Position != nil}
             .map { $0.Position!}
             .drive(onNext: { (coordinate) in
-                if self.annotation == nil{
-                    let annotation = MGLPointAnnotation()
-                    annotation.coordinate = coordinate
-                    self.mapView.setCenter(annotation.coordinate, zoomLevel: 5, direction: 0, animated: true)
-                    self.mapView.addAnnotation(annotation)
-                    self.annotation = annotation
+                if self.mapView.annotations == nil {
+                    self.annotation.coordinate = coordinate
+                    self.mapView.setCenter(self.annotation.coordinate, zoomLevel: 3, direction: 0, animated: true)
+                    self.mapView.addAnnotation(self.annotation)
                 }
                 self.annotation?.coordinate = coordinate
                 
             })
             .disposed(by: disposeBag)
         
+        issResuls
+            .map { issLocationData in issLocationData.Status == LocationStatus.ok}
+            .flatMap{ _ in self.issLocator.getIssCrew().asDriver(onErrorJustReturn: [])}
+            .drive(onNext: { crew in
+                self.annotation.title = crew.joined(separator: "\n")
+            })
+           .disposed(by: disposeBag)
         
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        mapView.delegate = nil
         self.disposeBag = nil
     }
     
@@ -75,6 +85,10 @@ class MapViewController: UIViewController, MGLMapViewDelegate{
         return true
     }
     
+    func mapView(_ mapView: MGLMapView, calloutViewFor annotation: MGLAnnotation) -> MGLCalloutView? {
+        // Instantiate and return our custom callout view.
+        return MultilineCalloutView(representedObject: annotation)
+    }
     
     func getStausLabelText(locationData: IssLocationData) -> NSAttributedString {
         let lastSeenTemplate = NSLocalizedString("LAST_SEEN", comment: "last seen: {value}")

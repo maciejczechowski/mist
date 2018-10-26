@@ -36,9 +36,12 @@ struct IssLocationData {
 
 protocol IssLocatorProtocol {
     func getIssPositions(with interval: TimeInterval) -> Observable<IssLocationData>
+    func getIssCrew() -> Observable<[String]>
 }
 
 public class IssLocator: IssLocatorProtocol {
+    
+    
 
     private let scheduler: SchedulerType;
     private let issApiClient: ApiClientProtocol
@@ -93,6 +96,18 @@ public class IssLocator: IssLocatorProtocol {
     }
 
 
+    func getIssCrew() -> Observable<[String]> {
+        return issApiClient
+            .getAndParseResponse(t: IssCrew.self, for: "astros.json")
+            .map { issCrew in
+                guard issCrew.message == "success" else {
+                    throw MistError.nonSucccess
+                }
+                
+                return issCrew.people.filter{ crewMember in crewMember.craft == "ISS"}.map{crewMember in crewMember.name }
+        };
+    }
+    
     private func getPosition() -> Observable<IssLocationData> {
 
         return issApiClient

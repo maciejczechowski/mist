@@ -28,6 +28,7 @@
 		DC638DB02181F2FA003F7385 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D9A2181037E003F7385 /* RxSwift.framework */; };
 		DC638DB12181F2FA003F7385 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D982181037E003F7385 /* RxCocoa.framework */; };
 		DC638DB421835A0F003F7385 /* MapViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638DB321835A0F003F7385 /* MapViewControllerCoordinator.swift */; };
+		DCA549572183A64700DA80BF /* MultilineCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA549562183A64700DA80BF /* MultilineCalloutView.swift */; };
 		DCE2378F218382B100DD9FF6 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE2378E218382B100DD9FF6 /* Mapbox.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		DC638DAA2181ECAE003F7385 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		DC638DAD2181F204003F7385 /* IssLocatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssLocatorTests.swift; sourceTree = "<group>"; };
 		DC638DB321835A0F003F7385 /* MapViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerCoordinator.swift; sourceTree = "<group>"; };
+		DCA549562183A64700DA80BF /* MultilineCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineCalloutView.swift; sourceTree = "<group>"; };
 		DCE2378E218382B100DD9FF6 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 		DC638D6D2180FD1F003F7385 /* Mist */ = {
 			isa = PBXGroup;
 			children = (
+				DCA549552183A62700DA80BF /* Views */,
 				DC638DB2218359F7003F7385 /* ViewControllers */,
 				DC638DA3218107F7003F7385 /* Services */,
 				DC638D8E2180FE29003F7385 /* Model */,
@@ -186,6 +189,14 @@
 				DC638DB321835A0F003F7385 /* MapViewControllerCoordinator.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DCA549552183A62700DA80BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DCA549562183A64700DA80BF /* MultilineCalloutView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC638DA5218108C9003F7385 /* ApiClient.swift in Sources */,
+				DCA549572183A64700DA80BF /* MultilineCalloutView.swift in Sources */,
 				DC638D922180FE61003F7385 /* IssCrew.swift in Sources */,
 				DC638D712180FD1F003F7385 /* MapViewController.swift in Sources */,
 				DC638D6F2180FD1F003F7385 /* AppDelegate.swift in Sources */,
