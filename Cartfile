@@ -1,2 +1,2 @@
 github "ReactiveX/RxSwift" ~> 4.0
-
+binary "https://www.mapbox.com/ios-sdk/Mapbox-iOS-SDK.json" ~> 4.5

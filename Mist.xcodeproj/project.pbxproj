@@ -27,6 +27,7 @@
 		DC638DB02181F2FA003F7385 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D9A2181037E003F7385 /* RxSwift.framework */; };
 		DC638DB12181F2FA003F7385 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D982181037E003F7385 /* RxCocoa.framework */; };
 		DC638DB421835A0F003F7385 /* MapViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638DB321835A0F003F7385 /* MapViewControllerCoordinator.swift */; };
+		DCE2378F218382B100DD9FF6 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE2378E218382B100DD9FF6 /* Mapbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		DC638DAA2181ECAE003F7385 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		DC638DAD2181F204003F7385 /* IssLocatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssLocatorTests.swift; sourceTree = "<group>"; };
 		DC638DB321835A0F003F7385 /* MapViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerCoordinator.swift; sourceTree = "<group>"; };
+		DCE2378E218382B100DD9FF6 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE2378F218382B100DD9FF6 /* Mapbox.framework in Frameworks */,
 				DC638DA02181053D003F7385 /* RxCocoa.framework in Frameworks */,
 				DC638D9F21810534003F7385 /* RxSwift.framework in Frameworks */,
 			);
@@ -146,6 +149,7 @@
 		DC638D972181037E003F7385 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCE2378E218382B100DD9FF6 /* Mapbox.framework */,
 				DC638DA1218106AE003F7385 /* RxTest.framework */,
 				DC638D992181037E003F7385 /* RxBlocking.framework */,
 				DC638D982181037E003F7385 /* RxCocoa.framework */,
@@ -289,6 +293,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Mapbox.framework",
 			);
 			outputFileListPaths = (
 			);
