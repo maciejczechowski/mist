@@ -11,7 +11,7 @@ import Foundation
 struct IssPosition : Codable {
     var message: String
     var timestamp: Date
-    var issPosition: Coordinate
+    var issPosition: Coordinate?
     
     enum CodingKeys: String, CodingKey {
         case message

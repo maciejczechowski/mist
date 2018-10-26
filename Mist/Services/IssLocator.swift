@@ -22,7 +22,7 @@ enum MistError: Error {
 struct IssLocationData {
     let Status: LocationStatus
     let Position: CLLocationCoordinate2D?
-    let Timestamp: Date
+    let Timestamp: Date?
 }
 
 public class IssLocator {
@@ -63,17 +63,20 @@ public class IssLocator {
                 Observable<Int>
                         .interval(RxTimeInterval(seconds), scheduler: scheduler)
                         .flatMapLatest { _ in
-                            self.getPosition()
+                            self.getPosition().catchError { (err) -> Observable<IssLocationData> in
+                                return Observable.just(IssLocationData(Status: LocationStatus.offline, Position: nil, Timestamp: Date()))
+                            }
                         }
                         .do(onNext: { (position) in
-                            self.lastStoredPosition = position.Position
-                            self.lastStoredDate = position.Timestamp
+                            if let cooridnate = position.Position {
+                              self.lastStoredPosition = cooridnate
+                              self.lastStoredDate = position.Timestamp
+                            }
                         })
-                        .catchError { (err) -> Observable<IssLocationData> in
-                            return Observable.just(IssLocationData(Status: LocationStatus.offline, Position: nil, Timestamp: Date()))
-                        }
         
-        let initial = Observable<IssLocationData>.just(IssLocationData(Status: LocationStatus.initializing, Position: lastStoredPosition, Timestamp: lastStoredDate ?? Date()))
+        
+        
+        let initial = Observable<IssLocationData>.just(IssLocationData(Status: LocationStatus.initializing, Position: lastStoredPosition, Timestamp: lastStoredDate))
         return initial.concat(networkPositionFetch);
     }
 
@@ -86,9 +89,15 @@ public class IssLocator {
                     guard issPosition.message == "success" else {
                         throw MistError.nonSucccess
                     }
+                    
+                    var coordinate: CLLocationCoordinate2D?
+                    if let position = issPosition.issPosition {
+                       coordinate =  CLLocationCoordinate2D(latitude: position.latitude, longitude: position.longitude)
+                    }
+                    
                     return IssLocationData(Status: LocationStatus.ok,
-                            Position: CLLocationCoordinate2D(latitude: issPosition.issPosition.latitude, longitude: issPosition.issPosition.longitude),
-                            Timestamp: Date())
+                                           Position: coordinate,
+                            Timestamp: issPosition.timestamp)
 
                 };
     }
