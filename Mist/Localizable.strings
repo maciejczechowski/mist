@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Mist
+
+  Created by Maciej Czechowski on 26.10.2018.
+  Copyright © 2018 Maciej Czechowski. All rights reserved.
+*/
+"LAST_SEEN" = "Last seen: %@";
+"OK" = "Connection ok";
+"OFFLINE" = "Connection offline";
+"INITIALIZING" = "Initializing connection";
+"NEVER" = "Never";
+

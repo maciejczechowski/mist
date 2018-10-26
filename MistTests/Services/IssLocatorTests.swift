@@ -53,7 +53,7 @@ class IssLocatorTests : XCTestCase {
         mockedDataStore?.lastKnownPositionDate = Date(timeIntervalSince1970: 1540473254)
         
         
-        let res = testScheduler?.start{ self.testedIssLocator!.getIssPositions(withInterval: 10)}
+        let res = testScheduler?.start{ self.testedIssLocator!.getIssPositions(with: 10.0)}
         XCTAssertEqual(1, res?.events.count)
    
         XCTAssertEqual(21, res!.events[0].value.element!.Position!.latitude)
@@ -66,7 +66,7 @@ class IssLocatorTests : XCTestCase {
     func testGetIssPositionsStartsWithEmptyDataIfNotInStore() {
         mockedApiClient?.responseMock = Observable<IssPosition>.never()
         
-        let res = testScheduler?.start{ self.testedIssLocator!.getIssPositions(withInterval: 10)}
+        let res = testScheduler?.start{ self.testedIssLocator!.getIssPositions(with: 10.0)}
         XCTAssertEqual(1, res?.events.count)
         
         XCTAssertNil(res!.events[0].value.element!.Position)
@@ -95,7 +95,7 @@ class IssLocatorTests : XCTestCase {
         mockedApiClient?.responseMock = fakeIssRoute
 
         //time 200-1000, 4 events expected: (200: initial), (450,700,950: value)
-        let res = testScheduler?.start{ self.testedIssLocator!.getIssPositions(withInterval: 250) }
+        let res = testScheduler?.start{ self.testedIssLocator!.getIssPositions(with: 250) }
   
  
         XCTAssertEqual(4, res?.events.count)
@@ -154,7 +154,7 @@ class IssLocatorTests : XCTestCase {
         mockedApiClient?.responseMock = fakeIssRoute
         
         //time 200-1000, step by 200, 6 events expected: 200: initial, 350: ok, 500: offline, 650: offline, 800 ok, 950 offline
-        let res = testScheduler?.start{ self.testedIssLocator!.getIssPositions(withInterval: 150) }
+        let res = testScheduler?.start{ self.testedIssLocator!.getIssPositions(with: 150) }
         
         
         XCTAssertEqual(6, res?.events.count)
@@ -219,7 +219,7 @@ class IssLocatorTests : XCTestCase {
         
         
         //time 200-1000, step by 200, events expected: 200: initial, 400: ok, 600: offline, 800: offline
-        let res = testScheduler?.start{ self.testedIssLocator!.getIssPositions(withInterval: 200) }
+        let res = testScheduler?.start{ self.testedIssLocator!.getIssPositions(with: 200) }
             XCTAssertEqual(4, res?.events.count)
         
           XCTAssertEqual(mockedDataStore?.lastKnownPosition?.latitude,51.0)

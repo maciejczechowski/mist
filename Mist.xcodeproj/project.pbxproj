@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1ACD8521838A9C0089FDEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC1ACD8421838A9C0089FDEC /* Localizable.strings */; };
 		DC638D6F2180FD1F003F7385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D6E2180FD1F003F7385 /* AppDelegate.swift */; };
 		DC638D712180FD1F003F7385 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D702180FD1F003F7385 /* MapViewController.swift */; };
 		DC638D742180FD1F003F7385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC638D722180FD1F003F7385 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC1ACD8421838A9C0089FDEC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		DC638D6B2180FD1F003F7385 /* Mist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC638D6E2180FD1F003F7385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC638D702180FD1F003F7385 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				DC638D752180FD22003F7385 /* Assets.xcassets */,
 				DC638D772180FD22003F7385 /* LaunchScreen.storyboard */,
 				DC638D7A2180FD22003F7385 /* Info.plist */,
+				DC1ACD8421838A9C0089FDEC /* Localizable.strings */,
 			);
 			path = Mist;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC638D792180FD22003F7385 /* LaunchScreen.storyboard in Resources */,
+				DC1ACD8521838A9C0089FDEC /* Localizable.strings in Resources */,
 				DC638D762180FD22003F7385 /* Assets.xcassets in Resources */,
 				DC638D742180FD1F003F7385 /* Main.storyboard in Resources */,
 			);

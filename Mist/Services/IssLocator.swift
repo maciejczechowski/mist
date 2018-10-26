@@ -11,12 +11,21 @@ import RxSwift
 import CoreLocation
 import RxCocoa
 
-enum LocationStatus {
+enum LocationStatus: CustomStringConvertible {
     case initializing, ok, offline
+   
+    var description: String {
+        switch self {
+                // Use Internationalization, as appropriate.
+        case .initializing: return NSLocalizedString("INITIALIZING", comment: "")
+        case .ok: return NSLocalizedString("OK", comment: "")
+        case .offline: return NSLocalizedString("OFFLINE", comment: "")
+        }
+    }
 }
 
 enum MistError: Error {
-    case nonSucccess
+    case nonSucccess, conversionError
 }
 
 struct IssLocationData {
@@ -26,9 +35,10 @@ struct IssLocationData {
 }
 
 protocol IssLocatorProtocol {
-     func getIssPositions(withInterval seconds: Int) -> Observable<IssLocationData>
+    func getIssPositions(with interval: TimeInterval) -> Observable<IssLocationData>
 }
-public class IssLocator : IssLocatorProtocol {
+
+public class IssLocator: IssLocatorProtocol {
 
     private let scheduler: SchedulerType;
     private let issApiClient: ApiClientProtocol
@@ -61,10 +71,10 @@ public class IssLocator : IssLocatorProtocol {
     }
 
 
-    func getIssPositions(withInterval seconds: Int) -> Observable<IssLocationData> {
+    func getIssPositions(with interval: TimeInterval) -> Observable<IssLocationData> {
         let networkPositionFetch =
                 Observable<Int>
-                        .interval(RxTimeInterval(seconds), scheduler: scheduler)
+                        .interval(interval, scheduler: scheduler)
                         .flatMapLatest { _ in
                             self.getPosition().catchError { (err) -> Observable<IssLocationData> in
                                 return Observable.just(IssLocationData(Status: LocationStatus.offline, Position: nil, Timestamp: Date()))
@@ -72,13 +82,12 @@ public class IssLocator : IssLocatorProtocol {
                         }
                         .do(onNext: { (position) in
                             if let cooridnate = position.Position {
-                              self.lastStoredPosition = cooridnate
-                              self.lastStoredDate = position.Timestamp
+                                self.lastStoredPosition = cooridnate
+                                self.lastStoredDate = position.Timestamp
                             }
                         })
-        
-        
-        
+
+
         let initial = Observable<IssLocationData>.just(IssLocationData(Status: LocationStatus.initializing, Position: lastStoredPosition, Timestamp: lastStoredDate))
         return initial.concat(networkPositionFetch);
     }
@@ -92,14 +101,19 @@ public class IssLocator : IssLocatorProtocol {
                     guard issPosition.message == "success" else {
                         throw MistError.nonSucccess
                     }
-                    
+
                     var coordinate: CLLocationCoordinate2D?
-                    if let position = issPosition.issPosition {
-                       coordinate =  CLLocationCoordinate2D(latitude: position.latitude, longitude: position.longitude)
+                    if let latitudeString = issPosition.issPosition?.latitude,
+                       let longitudeString = issPosition.issPosition?.longitude,
+                       let latitude = Double(latitudeString),
+                       let longitude = Double(longitudeString) {
+                        coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                    } else {
+                        throw MistError.conversionError
                     }
-                    
+
                     return IssLocationData(Status: LocationStatus.ok,
-                                           Position: coordinate,
+                            Position: coordinate,
                             Timestamp: issPosition.timestamp)
 
                 };
