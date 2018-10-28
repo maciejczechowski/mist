@@ -61,7 +61,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
                 .drive(onNext: { (coordinate) in
                     if self.mapView.annotations == nil {
                         self.annotation.coordinate = coordinate
-                        self.mapView.setCenter(self.annotation.coordinate, zoomLevel: 3, direction: 0, animated: true)
+                        self.mapView.setCenter(self.annotation.coordinate, zoomLevel: 1, direction: 0, animated: true)
                         self.mapView.addAnnotation(self.annotation)
                     }
                     self.annotation?.coordinate = coordinate
