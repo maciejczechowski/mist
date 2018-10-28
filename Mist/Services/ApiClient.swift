@@ -39,7 +39,9 @@ class ApiClient : ApiClientProtocol {
                 .rx
                 .data(request: request)
                 .map{ data in
-                    let model: T = try JSONDecoder().decode(T.self, from: data )
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .secondsSince1970
+                    let model: T = try decoder.decode(T.self, from: data )
                     return model;
         }
             

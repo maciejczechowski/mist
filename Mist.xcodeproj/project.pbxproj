@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321E8072F49CF0481310A23B /* IssLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321E8CEBF9DE408B197C7811 /* IssLocationData.swift */; };
+		321E82EBF1A462CE9185E0A4 /* IssCrew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321E807DF5E9A754C033C821 /* IssCrew.swift */; };
+		321E83740A8D4C44316AD05C /* CrewMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321E82A59F2642B2992296E4 /* CrewMember.swift */; };
+		321E87793CFAEEF5A96883B3 /* IssPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321E8A4C73ED45170936EE93 /* IssPosition.swift */; };
+		321E8A2C4889FBC743ABB4B9 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321E8BE228E0E102568B6CA3 /* Coordinate.swift */; };
+		321E8BB0A217CC2E98D431B7 /* LocationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321E86DC8A210AA0E6E2BE09 /* LocationStatus.swift */; };
+		321E8DB72BD99AD5C2DF4F23 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321E8B5709A842781F076BCC /* Errors.swift */; };
 		DC1ACD8521838A9C0089FDEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC1ACD8421838A9C0089FDEC /* Localizable.strings */; };
 		DC638D6F2180FD1F003F7385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D6E2180FD1F003F7385 /* AppDelegate.swift */; };
 		DC638D712180FD1F003F7385 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D702180FD1F003F7385 /* MapViewController.swift */; };
 		DC638D742180FD1F003F7385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC638D722180FD1F003F7385 /* Main.storyboard */; };
 		DC638D762180FD22003F7385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC638D752180FD22003F7385 /* Assets.xcassets */; };
 		DC638D792180FD22003F7385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC638D772180FD22003F7385 /* LaunchScreen.storyboard */; };
-		DC638D842180FD22003F7385 /* MistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D832180FD22003F7385 /* MistTests.swift */; };
-		DC638D902180FE58003F7385 /* IssPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D8F2180FE58003F7385 /* IssPosition.swift */; };
-		DC638D922180FE61003F7385 /* IssCrew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D912180FE61003F7385 /* IssCrew.swift */; };
-		DC638D942180FF77003F7385 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D932180FF77003F7385 /* Coordinate.swift */; };
-		DC638D962181004F003F7385 /* CrewMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638D952181004F003F7385 /* CrewMember.swift */; };
 		DC638D9F21810534003F7385 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D9A2181037E003F7385 /* RxSwift.framework */; };
 		DC638DA02181053D003F7385 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC638D982181037E003F7385 /* RxCocoa.framework */; };
 		DC638DA5218108C9003F7385 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC638DA4218108C9003F7385 /* ApiClient.swift */; };
@@ -43,6 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		321E807DF5E9A754C033C821 /* IssCrew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssCrew.swift; sourceTree = "<group>"; };
+		321E82A59F2642B2992296E4 /* CrewMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrewMember.swift; sourceTree = "<group>"; };
+		321E86DC8A210AA0E6E2BE09 /* LocationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationStatus.swift; sourceTree = "<group>"; };
+		321E8A4C73ED45170936EE93 /* IssPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssPosition.swift; sourceTree = "<group>"; };
+		321E8B5709A842781F076BCC /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		321E8BE228E0E102568B6CA3 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		321E8CEBF9DE408B197C7811 /* IssLocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssLocationData.swift; sourceTree = "<group>"; };
 		DC1ACD8421838A9C0089FDEC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		DC638D6B2180FD1F003F7385 /* Mist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC638D6E2180FD1F003F7385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,12 +61,7 @@
 		DC638D782180FD22003F7385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC638D7A2180FD22003F7385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC638D7F2180FD22003F7385 /* MistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC638D832180FD22003F7385 /* MistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MistTests.swift; sourceTree = "<group>"; };
 		DC638D852180FD22003F7385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC638D8F2180FE58003F7385 /* IssPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssPosition.swift; sourceTree = "<group>"; };
-		DC638D912180FE61003F7385 /* IssCrew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssCrew.swift; sourceTree = "<group>"; };
-		DC638D932180FF77003F7385 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
-		DC638D952181004F003F7385 /* CrewMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMember.swift; sourceTree = "<group>"; };
 		DC638D982181037E003F7385 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		DC638D992181037E003F7385 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		DC638D9A2181037E003F7385 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -95,6 +99,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		321E8614C449F0029CAAC7C5 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				321E8A4C73ED45170936EE93 /* IssPosition.swift */,
+				321E807DF5E9A754C033C821 /* IssCrew.swift */,
+				321E82A59F2642B2992296E4 /* CrewMember.swift */,
+				321E8BE228E0E102568B6CA3 /* Coordinate.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		DC638D622180FD1F003F7385 = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				DC638DAC2181F1F0003F7385 /* Services */,
-				DC638D832180FD22003F7385 /* MistTests.swift */,
 				DC638D852180FD22003F7385 /* Info.plist */,
 			);
 			path = MistTests;
@@ -144,10 +158,10 @@
 		DC638D8E2180FE29003F7385 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DC638D8F2180FE58003F7385 /* IssPosition.swift */,
-				DC638D912180FE61003F7385 /* IssCrew.swift */,
-				DC638D932180FF77003F7385 /* Coordinate.swift */,
-				DC638D952181004F003F7385 /* CrewMember.swift */,
+				321E8614C449F0029CAAC7C5 /* Api */,
+				321E86DC8A210AA0E6E2BE09 /* LocationStatus.swift */,
+				321E8B5709A842781F076BCC /* Errors.swift */,
+				321E8CEBF9DE408B197C7811 /* IssLocationData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +323,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Mapbox.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -327,15 +342,18 @@
 			files = (
 				DC638DA5218108C9003F7385 /* ApiClient.swift in Sources */,
 				DCA549572183A64700DA80BF /* MultilineCalloutView.swift in Sources */,
-				DC638D922180FE61003F7385 /* IssCrew.swift in Sources */,
 				DC638D712180FD1F003F7385 /* MapViewController.swift in Sources */,
 				DC638D6F2180FD1F003F7385 /* AppDelegate.swift in Sources */,
-				DC638D902180FE58003F7385 /* IssPosition.swift in Sources */,
 				DC638DA921811070003F7385 /* IssLocator.swift in Sources */,
 				DC638DB421835A0F003F7385 /* MapViewControllerCoordinator.swift in Sources */,
-				DC638D962181004F003F7385 /* CrewMember.swift in Sources */,
 				DC638DAB2181ECAE003F7385 /* DataStore.swift in Sources */,
-				DC638D942180FF77003F7385 /* Coordinate.swift in Sources */,
+				321E87793CFAEEF5A96883B3 /* IssPosition.swift in Sources */,
+				321E82EBF1A462CE9185E0A4 /* IssCrew.swift in Sources */,
+				321E83740A8D4C44316AD05C /* CrewMember.swift in Sources */,
+				321E8A2C4889FBC743ABB4B9 /* Coordinate.swift in Sources */,
+				321E8BB0A217CC2E98D431B7 /* LocationStatus.swift in Sources */,
+				321E8DB72BD99AD5C2DF4F23 /* Errors.swift in Sources */,
+				321E8072F49CF0481310A23B /* IssLocationData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +362,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC638DAE2181F204003F7385 /* IssLocatorTests.swift in Sources */,
-				DC638D842180FD22003F7385 /* MistTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +526,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.czechowski.Mist;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.czechowski.Misst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,7 +548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.czechowski.Mist;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.czechowski.Misst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

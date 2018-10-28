@@ -11,28 +11,6 @@ import RxSwift
 import CoreLocation
 import RxCocoa
 
-enum LocationStatus: CustomStringConvertible {
-    case initializing, ok, offline
-   
-    var description: String {
-        switch self {
-                // Use Internationalization, as appropriate.
-        case .initializing: return NSLocalizedString("INITIALIZING", comment: "")
-        case .ok: return NSLocalizedString("OK", comment: "")
-        case .offline: return NSLocalizedString("OFFLINE", comment: "")
-        }
-    }
-}
-
-enum MistError: Error {
-    case nonSucccess, conversionError
-}
-
-struct IssLocationData {
-    let Status: LocationStatus
-    let Position: CLLocationCoordinate2D?
-    let Timestamp: Date?
-}
 
 protocol IssLocatorProtocol {
     func getIssPositions(with interval: TimeInterval) -> Observable<IssLocationData>
@@ -41,7 +19,7 @@ protocol IssLocatorProtocol {
 
 public class IssLocator: IssLocatorProtocol {
     
-    
+
 
     private let scheduler: SchedulerType;
     private let issApiClient: ApiClientProtocol
@@ -80,18 +58,19 @@ public class IssLocator: IssLocatorProtocol {
                         .interval(interval, scheduler: scheduler)
                         .flatMapLatest { _ in
                             self.getPosition().catchError { (err) -> Observable<IssLocationData> in
-                                return Observable.just(IssLocationData(Status: LocationStatus.offline, Position: nil, Timestamp: Date()))
+                                return Observable.just(IssLocationData(Status: LocationStatus.offline, Position: self.lastStoredPosition, Timestamp: self.lastStoredDate))
                             }
                         }
                         .do(onNext: { (position) in
-                            if let cooridnate = position.Position {
-                                self.lastStoredPosition = cooridnate
+                            if let coordinate = position.Position {
+                                self.lastStoredPosition = coordinate
                                 self.lastStoredDate = position.Timestamp
                             }
                         })
 
 
-        let initial = Observable<IssLocationData>.just(IssLocationData(Status: LocationStatus.initializing, Position: lastStoredPosition, Timestamp: lastStoredDate))
+        let initial = Observable<IssLocationData>.just(
+            IssLocationData(Status: LocationStatus.initializing, Position: lastStoredPosition, Timestamp: lastStoredDate))
         return initial.concat(networkPositionFetch);
     }
 

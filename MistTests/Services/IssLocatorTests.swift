@@ -125,7 +125,7 @@ class IssLocatorTests : XCTestCase {
     }
     
     func testGetIssPositionsRecoversOnNetworkFailure() {
-        let lat = 51.0
+        var lat = 51.0
         let lon = 22.0
         var timestamp = testScheduler.now
         var iter = 0
@@ -144,6 +144,7 @@ class IssLocatorTests : XCTestCase {
             default:
                 observer.onNext(IssPosition(message: "success",
                                             timestamp: timestamp, issPosition: Coordinate(latitude: lat.description, longitude: lon.description)))
+                lat += 1
            }
             iter += 1
             
@@ -168,18 +169,18 @@ class IssLocatorTests : XCTestCase {
         
         
         XCTAssertEqual(LocationStatus.offline, res.events[2].value.element?.Status)
-        XCTAssertNil(res.events[2].value.element?.Position)
+        XCTAssertEqual(51.0, res.events[2].value.element?.Position?.latitude)
      
         XCTAssertEqual(LocationStatus.offline, res.events[3].value.element?.Status)
-        XCTAssertNil(res.events[3].value.element?.Position)
+        XCTAssertEqual(51.0, res.events[3].value.element?.Position?.latitude)
         
         XCTAssertEqual(LocationStatus.ok, res.events[4].value.element?.Status)
-        XCTAssertEqual(51.0, res.events[4].value.element?.Position?.latitude)
+        XCTAssertEqual(52.0, res.events[4].value.element?.Position?.latitude)
         XCTAssertEqual(22.0, res.events[4].value.element?.Position?.longitude)
         
         
         XCTAssertEqual(LocationStatus.offline, res.events[5].value.element?.Status)
-        XCTAssertNil(res.events[5].value.element?.Position)
+        XCTAssertEqual(52.0, res.events[5].value.element?.Position?.latitude)
         
     }
     
